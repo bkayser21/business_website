@@ -38,13 +38,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ received: true });
     }
 
-    const invitee = payload.payload?.invitee;
-    if (!invitee?.name || !invitee?.email) {
+    // Calendly v2 payload: name and email are directly on payload.payload
+    const name = payload.payload?.name;
+    const email = payload.payload?.email;
+    if (!name || !email) {
       return NextResponse.json({ error: "Missing invitee data" }, { status: 400 });
     }
-
-    const name = invitee.name;
-    const email = invitee.email;
     const discoveryUrl = `${siteUrl}/discovery?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
 
     // Send discovery email to the prospect
