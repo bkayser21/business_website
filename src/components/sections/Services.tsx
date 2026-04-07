@@ -43,12 +43,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-neutral-50">
+    <section id="services" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">What I Do</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">Services</h2>
-          <p className="max-w-xl mx-auto text-neutral-600 text-lg">
+          <p className="max-w-xl mx-auto text-neutral-500 text-lg">
             From a simple landing page to a full-featured SaaS product — I cover the full stack.
           </p>
         </div>
@@ -57,13 +56,13 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-xl p-6 border border-neutral-200 hover:border-brand-200 hover:shadow-md transition-all duration-200"
+              className="bg-white rounded-xl p-6 border border-neutral-200 hover:border-neutral-300 transition-colors duration-200"
             >
-              <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
+              <div className="text-neutral-400 mb-4">
                 {service.icon}
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">{service.title}</h3>
-              <p className="text-sm text-neutral-600 leading-relaxed">{service.description}</p>
+              <p className="text-sm text-neutral-500 leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>

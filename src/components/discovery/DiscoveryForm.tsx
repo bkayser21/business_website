@@ -91,9 +91,9 @@ export default function DiscoveryForm({
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-colors ${
                 s < step
-                  ? "bg-brand-600 text-white"
+                  ? "bg-brand-500 text-neutral-900"
                   : s === step
-                  ? "bg-brand-600 text-white ring-4 ring-brand-100"
+                  ? "bg-brand-500 text-neutral-900 ring-4 ring-brand-100"
                   : "bg-neutral-200 text-neutral-400"
               }`}
             >
@@ -105,7 +105,7 @@ export default function DiscoveryForm({
                 s
               )}
             </div>
-            {s < 3 && <div className={`flex-1 h-px ${s < step ? "bg-brand-600" : "bg-neutral-200"}`} />}
+            {s < 3 && <div className={`flex-1 h-px ${s < step ? "bg-brand-500" : "bg-neutral-200"}`} />}
           </div>
         ))}
       </div>
@@ -126,7 +126,7 @@ export default function DiscoveryForm({
                 }}
                 className={`flex items-center gap-4 px-5 py-4 rounded-xl border text-left transition-all ${
                   form.project_type === pt.value
-                    ? "border-brand-600 bg-brand-50 ring-1 ring-brand-600"
+                    ? "border-brand-500 bg-brand-50 ring-1 ring-brand-600"
                     : "border-neutral-200 hover:border-brand-300 hover:bg-neutral-50"
                 }`}
               >
@@ -154,7 +154,7 @@ export default function DiscoveryForm({
                   onClick={() => setField("budget", b)}
                   className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
                     form.budget === b
-                      ? "border-brand-600 bg-brand-50 text-brand-700 ring-1 ring-brand-600"
+                      ? "border-brand-500 bg-brand-50 text-brand-600 ring-1 ring-brand-500"
                       : "border-neutral-200 text-neutral-600 hover:border-brand-300"
                   }`}
                 >
@@ -174,7 +174,7 @@ export default function DiscoveryForm({
                   onClick={() => setField("timeline", t)}
                   className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
                     form.timeline === t
-                      ? "border-brand-600 bg-brand-50 text-brand-700 ring-1 ring-brand-600"
+                      ? "border-brand-500 bg-brand-50 text-brand-600 ring-1 ring-brand-500"
                       : "border-neutral-200 text-neutral-600 hover:border-brand-300"
                   }`}
                 >
@@ -196,7 +196,7 @@ export default function DiscoveryForm({
               type="button"
               onClick={() => setStep(3)}
               disabled={!form.budget || !form.timeline}
-              className="flex-1 px-5 py-2.5 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 px-5 py-2.5 rounded-lg bg-brand-500 text-neutral-900 text-sm font-semibold hover:bg-brand-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               Next →
             </button>
@@ -282,7 +282,7 @@ export default function DiscoveryForm({
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-500 text-neutral-900 text-sm font-semibold hover:bg-brand-600 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {status === "loading" ? (
                   <>

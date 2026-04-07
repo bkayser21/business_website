@@ -17,7 +17,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-bold text-neutral-900 hover:text-brand-600 transition-colors">
+          <a href="#" className="text-xl font-bold text-neutral-900 hover:text-brand-500 transition-colors">
             {BRAND_NAME}
           </a>
 
@@ -34,7 +34,7 @@ export default function Header() {
             ))}
             <a
               href="#contact"
-              className="ml-4 inline-flex items-center px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors"
+              className="ml-4 inline-flex items-center px-4 py-2 rounded-lg bg-brand-500 text-neutral-900 text-sm font-medium hover:bg-brand-600 transition-colors"
             >
               Get a Free Consultation
             </a>
@@ -73,7 +73,7 @@ export default function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors"
+            className="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-brand-500 text-neutral-900 text-sm font-medium hover:bg-brand-600 transition-colors"
           >
             Get a Free Consultation
           </a>
