@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { BRAND_NAME } from "@/lib/config";
 
 const navLinks = [
@@ -19,7 +18,8 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center" aria-label={BRAND_NAME}>
-            <Image src="/logo.svg" alt={BRAND_NAME} width={140} height={36} priority />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt={BRAND_NAME} className="h-10 w-auto" />
           </a>
 
           {/* Desktop nav */}

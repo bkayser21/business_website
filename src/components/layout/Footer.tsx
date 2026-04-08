@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BRAND_NAME, BRAND_TAGLINE, GITHUB_URL, LINKEDIN_URL } from "@/lib/config";
 
 const navLinks = [
@@ -18,7 +17,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-3">
-              <Image src="/logo.svg" alt={BRAND_NAME} width={120} height={32} className="brightness-0 invert" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt={BRAND_NAME} className="h-9 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed">{BRAND_TAGLINE}</p>
           </div>
