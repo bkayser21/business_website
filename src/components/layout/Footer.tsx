@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BRAND_NAME, BRAND_TAGLINE, GITHUB_URL, LINKEDIN_URL } from "@/lib/config";
 
 const navLinks = [
@@ -16,7 +17,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <p className="text-white font-bold text-lg mb-2">{BRAND_NAME}</p>
+            <div className="mb-3">
+              <Image src="/logo.svg" alt={BRAND_NAME} width={120} height={32} className="brightness-0 invert" />
+            </div>
             <p className="text-sm leading-relaxed">{BRAND_TAGLINE}</p>
           </div>
 
