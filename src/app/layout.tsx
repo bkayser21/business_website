@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SplashScreen from "@/components/splash/SplashScreen";
+import { SplashProvider } from "@/context/SplashContext";
 import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/config";
 
 const inter = Inter({
@@ -23,10 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <SplashProvider>
+          <SplashScreen />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SplashProvider>
       </body>
     </html>
   );
