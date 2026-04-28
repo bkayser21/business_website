@@ -7,7 +7,7 @@ const services = [
     ),
     title: "Web Development",
     description:
-      "Custom websites and web apps built with modern frameworks. Fast, accessible, and optimized for search engines from day one.",
+      "A website that works the way your business does. Fast, easy to find, and built to turn visitors into customers.",
   },
   {
     icon: (
@@ -17,7 +17,7 @@ const services = [
     ),
     title: "SaaS Development",
     description:
-      "End-to-end SaaS product development — from architecture and auth to billing and deployment. Built to scale as your user base grows.",
+      "Stop renting tools that almost fit. Own custom software built for your exact workflow — no subscriptions, no compromises.",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const services = [
     ),
     title: "AI & Automation",
     description:
-      "Integrate AI into your workflows — chatbots, document processing, smart automations, and custom integrations with the latest LLM APIs.",
+      "Let software handle the repetitive work. Custom automations that save your team time and reduce the cost of growing.",
   },
   {
     icon: (
@@ -37,18 +37,23 @@ const services = [
     ),
     title: "Consulting",
     description:
-      "Technical strategy, architecture reviews, and code audits. Get an expert second opinion before you build — or after you're stuck.",
+      "Not sure where to start — or stuck mid-project? Get clear on what you actually need before spending another dollar.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-off-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">Services</h2>
-          <p className="max-w-xl mx-auto text-neutral-500 text-lg">
-            From a simple landing page to a full-featured SaaS product — I cover the full stack.
+          <h2
+            className="text-3xl sm:text-4xl font-bold font-display text-charcoal mb-4"
+            style={{ letterSpacing: "-0.5px" }}
+          >
+            Services
+          </h2>
+          <p className="max-w-xl mx-auto text-stone text-lg">
+            We build software that fits your business — not the other way around.
           </p>
         </div>
 
@@ -56,13 +61,13 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-xl p-6 border border-neutral-200 hover:border-neutral-300 transition-colors duration-200"
+              className="bg-lavender rounded-2xl p-6 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-200"
             >
-              <div className="text-neutral-400 mb-4">
+              <div className="text-cyan-deep mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900 mb-2">{service.title}</h3>
-              <p className="text-sm text-neutral-500 leading-relaxed">{service.description}</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-2">{service.title}</h3>
+              <p className="text-sm text-stone leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>

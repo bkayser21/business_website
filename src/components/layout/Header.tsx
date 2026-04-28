@@ -14,7 +14,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-200">
+    <header className="sticky top-0 z-50 bg-off-white/95 backdrop-blur border-b border-lavender">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center" aria-label={BRAND_NAME}>
@@ -28,14 +28,14 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="text-sm font-medium text-stone hover:text-charcoal transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-4 inline-flex items-center px-4 py-2 rounded-lg bg-brand-500 text-neutral-900 text-sm font-medium hover:bg-brand-600 transition-colors"
+              className="ml-4 inline-flex items-center px-4 py-2 rounded-lg bg-cyan text-charcoal text-sm font-medium hover:bg-cyan-deep transition-colors"
             >
               Get a Free Consultation
             </a>
@@ -43,7 +43,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-md text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+            className="md:hidden p-2 rounded-md text-stone hover:text-charcoal hover:bg-lavender transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -60,13 +60,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-neutral-200 bg-white px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden border-t border-lavender bg-off-white px-4 py-4 flex flex-col gap-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 py-1 transition-colors"
+              className="text-sm font-medium text-stone hover:text-charcoal py-1 transition-colors"
             >
               {link.label}
             </a>
@@ -74,7 +74,7 @@ export default function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-brand-500 text-neutral-900 text-sm font-medium hover:bg-brand-600 transition-colors"
+            className="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-cyan text-charcoal text-sm font-medium hover:bg-cyan-deep transition-colors"
           >
             Get a Free Consultation
           </a>

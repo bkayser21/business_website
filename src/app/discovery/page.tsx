@@ -17,10 +17,10 @@ export default async function DiscoveryPage({
   const email = params.email ? decodeURIComponent(params.email) : "";
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-off-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="pt-8 pb-2 text-center">
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-stone">
             Step 1 of 2 before our call &mdash; takes about 2 minutes
           </p>
         </div>
