@@ -1,65 +1,66 @@
-import { BRAND_NAME, BRAND_TAGLINE, GITHUB_URL, LINKEDIN_URL } from "@/lib/config";
+import { BRAND_NAME, BRAND_TAGLINE, CONTACT_EMAIL_DISPLAY, CALENDLY_URL } from "@/lib/config";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "The problem", href: "#problem" },
+  { label: "What we do", href: "#services" },
+  { label: "How it works", href: "#how" },
+  { label: "Why us", href: "#why" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal-deep text-lavender">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="mb-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt={BRAND_NAME} className="h-9 w-auto brightness-0 invert" />
-            </div>
-            <p className="text-sm leading-relaxed">{BRAND_TAGLINE}</p>
-          </div>
-
-          {/* Quick links */}
-          <div>
-            <p className="text-off-white font-mono text-xs mb-3 uppercase tracking-widest">Quick Links</p>
-            <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-sm hover:text-off-white transition-colors">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <p className="text-off-white font-mono text-xs mb-3 uppercase tracking-widest">Connect</p>
-            <div className="flex gap-4">
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                className="hover:text-off-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                className="hover:text-off-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-            </div>
-          </div>
+    <footer className="footer">
+      <div className="wrap footer__inner">
+        <div className="footer__brand">
+          <a className="brand brand--footer" href="#top" aria-label={`${BRAND_NAME} home`}>
+            <span className="brand__badge" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="34" height="34">
+                <defs>
+                  <linearGradient id="footer-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stopColor="var(--blue)" />
+                    <stop offset="1" stopColor="var(--pink)" />
+                  </linearGradient>
+                </defs>
+                <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="none" stroke="url(#footer-grad)" strokeWidth="2.5" />
+                <path d="M20 9 L30 30 L23.2 30 L20 22.4 L16.8 30 L10 30 Z" fill="url(#footer-grad)" />
+              </svg>
+            </span>
+            <span className="brand__word">{BRAND_NAME}</span>
+          </a>
+          <p className="footer__tag">{BRAND_TAGLINE}</p>
         </div>
 
-        <div className="border-t border-charcoal pt-6 text-sm text-center">
-          &copy; {year} Bryan Kayser. All rights reserved.
+        <nav className="footer__nav" aria-label="Footer">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="footer__contact">
+          <a className="footer__email" href={`mailto:${CONTACT_EMAIL_DISPLAY}`}>
+            {CONTACT_EMAIL_DISPLAY}
+          </a>
+          <a className="footer__site" href="https://apexmade.com" target="_blank" rel="noopener noreferrer">
+            apexmade.com
+          </a>
+          <a
+            className="btn btn--primary btn--sm"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a free call
+          </a>
         </div>
+      </div>
+
+      <div className="wrap footer__legal">
+        <span>&copy; {year} {BRAND_NAME}. All rights reserved.</span>
       </div>
     </footer>
   );

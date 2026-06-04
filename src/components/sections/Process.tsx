@@ -1,68 +1,51 @@
-const steps = [
-  {
-    number: "01",
-    title: "We Listen First",
-    description:
-      "Tell us how your business works and what's not working. We study the problem before we propose anything.",
-  },
-  {
-    number: "02",
-    title: "We Build Together",
-    description:
-      "Regular check-ins keep you in the loop. You see real progress, give feedback, and shape the outcome as we go.",
-  },
-  {
-    number: "03",
-    title: "We Go Live With You",
-    description:
-      "We deploy, test, and launch together. You'll feel confident from day one — not handed a manual and left alone.",
-  },
-  {
-    number: "04",
-    title: "We Don't Disappear",
-    description:
-      "Need a fix, a new feature, or just a quick answer? I'm still here after launch — because the work doesn't stop at delivery.",
-  },
-];
+import { CALENDLY_URL } from "@/lib/config";
 
-export default function Process() {
+export default function HowItWorks() {
   return (
-    <section id="process" className="py-24 bg-lavender">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2
-            className="text-3xl sm:text-4xl font-bold font-display text-charcoal mb-4"
-            style={{ letterSpacing: "-0.5px" }}
+    <section className="section how" id="how">
+      <div className="wrap">
+        <p className="eyebrow eyebrow--center reveal">How it works</p>
+        <h2 className="section__title section__title--center reveal">
+          Three simple steps. No risk, no jargon.
+        </h2>
+        <ol className="steps">
+          <li className="step reveal">
+            <span className="step__num">1</span>
+            <h3>Free call</h3>
+            <p>
+              Tell me what&apos;s slowing you down. No jargon, no pressure — just a straight
+              conversation about where the time is going.
+            </p>
+          </li>
+          <li className="step__line reveal" aria-hidden="true" />
+          <li className="step reveal">
+            <span className="step__num">2</span>
+            <h3>Clear plan &amp; fixed scope</h3>
+            <p>
+              You get a simple plan with a fixed price and timeline. You know exactly what
+              you&apos;re getting before anything starts.
+            </p>
+          </li>
+          <li className="step__line reveal" aria-hidden="true" />
+          <li className="step reveal">
+            <span className="step__num">3</span>
+            <h3>We build &amp; hand it off</h3>
+            <p>
+              I build it, set it up, and show you how to use it — in plain English. Then it
+              just works in the background.
+            </p>
+          </li>
+        </ol>
+        <div className="how__cta reveal">
+          <a
+            className="btn btn--primary btn--lg"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            How It Works
-          </h2>
-          <p className="max-w-xl mx-auto text-stone text-lg">
-            No complicated onboarding. We go from first conversation to shipped product as efficiently as possible.
-          </p>
-        </div>
-
-        {/* Desktop */}
-        <div className="hidden md:grid grid-cols-4 gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="flex flex-col">
-              <span className="text-7xl font-bold font-display text-charcoal/20 leading-none mb-4">{step.number}</span>
-              <h3 className="font-semibold text-charcoal text-lg mb-2">{step.title}</h3>
-              <p className="text-sm text-stone leading-relaxed">{step.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile */}
-        <div className="md:hidden flex flex-col gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="flex gap-5">
-              <span className="text-5xl font-bold font-display text-charcoal/20 leading-none flex-shrink-0 w-16">{step.number}</span>
-              <div className="pt-2">
-                <h3 className="font-semibold text-charcoal text-lg mb-1">{step.title}</h3>
-                <p className="text-sm text-stone leading-relaxed">{step.description}</p>
-              </div>
-            </div>
-          ))}
+            Book a free discovery call
+          </a>
+          <span className="how__cta-note">Free · 20 minutes · no pressure</span>
         </div>
       </div>
     </section>

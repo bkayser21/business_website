@@ -1,35 +1,53 @@
+import { CALENDLY_URL } from "@/lib/config";
+
 export default function Hero() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex items-center bg-off-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        <h1
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-charcoal leading-tight mb-6"
-          style={{ letterSpacing: "-1.5px" }}
-        >
-          Your Software. Built From the Inside Out.
+    <section className="hero">
+      <div className="hero__bg" aria-hidden="true">
+        <span className="orb orb--blue" />
+        <span className="orb orb--pink" />
+        <span className="grid-fade" />
+      </div>
+      <div className="wrap hero__inner">
+        <p className="eyebrow reveal">For local businesses that are done with busywork</p>
+
+        <h1 className="hero__title reveal">
+          <span className="hl hl--hours">
+            Win back <span className="grad">hours every week</span>
+            <br />— without hiring a tech team.
+          </span>
+          <span className="hl hl--busywork">
+            Your business,
+            <br />
+            <span className="grad">minus the busywork.</span>
+          </span>
+          <span className="hl hl--admin">
+            Stop drowning in admin.
+            <br />
+            Let <span className="grad">smart software</span> do it.
+          </span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-stone leading-relaxed mb-10">
-          Tired of software that almost works? Get custom tools built around how your business actually runs — and own them outright.
+        <p className="hero__sub reveal">
+          Apex Made builds custom software, simple AI tools, and automations for local
+          businesses — so you capture every lead and spend far less time on manual work.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="hero__cta reveal">
           <a
-            href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-cyan text-charcoal font-semibold text-base hover:bg-cyan-deep transition-colors"
+            className="btn btn--primary btn--lg"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Get a Free Consultation
-          </a>
-          <a
-            href="#services"
-            className="text-stone font-medium text-base hover:text-charcoal transition-colors inline-flex items-center gap-1"
-          >
-            See how it works
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Book a free discovery call
           </a>
         </div>
+
+        <p className="hero__trust reveal">
+          <span className="dot" />
+          Free, no pressure, 20 minutes. You work directly with the person who builds it.
+        </p>
       </div>
     </section>
   );

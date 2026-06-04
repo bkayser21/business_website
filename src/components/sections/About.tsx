@@ -1,90 +1,54 @@
-const valueProps = [
-  {
-    title: "You'll always know who's building your software",
-    description: "No account managers, no handoffs. You work directly with me from first call to final launch.",
-  },
-  {
-    title: "Software that fits how you work",
-    description: "I take time to understand how you actually operate before writing a single line of code.",
-  },
-  {
-    title: "Built to last — no duct tape, no shortcuts",
-    description: "Clean, solid builds that hold up as your business grows — not something you'll need to redo in a year.",
-  },
-  {
-    title: "No agency bloat. No waiting around.",
-    description: "Small, focused engagements that ship quickly — without the overhead or delays of a big dev shop.",
-  },
-];
-
-const outcomes = [
-  "You own 100% of the code",
-  "No retainers or lock-in",
-  "No account managers — just Bryan",
-  "Built for how you work, not a template",
-  "Response time: within 1 business day",
-];
-
-export default function About() {
+export default function WhyApexMade() {
   return (
-    <section id="about" className="py-24 bg-charcoal relative overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(82,222,229,0.13) 0%, transparent 70%)",
-        }}
-      />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Text */}
-          <div>
-            <h2
-              className="text-3xl sm:text-4xl font-bold font-display text-off-white mb-6"
-              style={{ letterSpacing: "-0.5px" }}
-            >
-              Why Apex Made
-            </h2>
-            <p className="text-lavender text-lg leading-relaxed mb-10">
-              Most software is built for everyone, which means it fits no one perfectly. I build software around how your business actually works — then hand it over so it&apos;s truly yours.
+    <section className="section why" id="why">
+      <div className="wrap why__inner">
+        <div className="why__intro reveal">
+          <p className="eyebrow">Why Apex Made</p>
+          <h2 className="section__title">
+            Serious technical chops. Delivered in plain English.
+          </h2>
+          <p className="section__lede">
+            I&apos;m a data scientist by background who&apos;d rather build something that
+            genuinely saves you time than sell you buzzwords. Here&apos;s what that means for you.
+          </p>
+        </div>
+        <ul className="why__list">
+          <li className="why__item reveal">
+            <h3>A real technical background</h3>
+            <p>
+              Years of working with data and software — so what I build is solid, not a
+              fragile patch-job. You get the depth without the lecture.
             </p>
-
-            <ul className="flex flex-col gap-6">
-              {valueProps.map((vp) => (
-                <li key={vp.title} className="flex gap-4">
-                  <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-cyan flex items-center justify-center">
-                    <svg className="w-3 h-3 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-off-white">{vp.title}</p>
-                    <p className="text-sm text-lavender mt-1 leading-relaxed">{vp.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#contact"
-              className="mt-10 inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-cyan text-charcoal font-semibold text-base hover:bg-cyan-deep transition-colors"
-            >
-              Let&apos;s Talk
-            </a>
-          </div>
-
-          {/* Outcomes panel */}
-          <div className="hidden lg:flex flex-col gap-4">
-            {outcomes.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 bg-charcoal-deep rounded-xl px-5 py-4 border border-charcoal"
-              >
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-cyan" />
-                <span className="text-lavender text-sm font-medium">{item}</span>
-              </div>
-            ))}
+          </li>
+          <li className="why__item reveal">
+            <h3>You work directly with me</h3>
+            <p>
+              No offshore team, no rotating account managers. The person you talk to is the
+              person who builds it and stands behind it.
+            </p>
+          </li>
+          <li className="why__item reveal">
+            <h3>Fixed scope, no surprises</h3>
+            <p>
+              A clear price, a clear timeline, a clear deliverable — agreed before we start.
+              No open-ended invoices, no scope creep.
+            </p>
+          </li>
+          <li className="why__item reveal">
+            <h3>Built for local businesses</h3>
+            <p>
+              Practical tools for how you actually work — not enterprise software shrunk down
+              and sold to you at a markup.
+            </p>
+          </li>
+        </ul>
+        {/* placeholder for client logos / testimonials — add as they come in */}
+        <div className="trustbar reveal" aria-label="Early client logos coming soon">
+          <span className="trustbar__label">Trusted by local businesses</span>
+          <div className="trustbar__slots">
+            <span className="logo-slot">your logo here</span>
+            <span className="logo-slot">your logo here</span>
+            <span className="logo-slot">your logo here</span>
           </div>
         </div>
       </div>

@@ -74,13 +74,10 @@ export default function DiscoveryForm({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2
-          className="text-2xl font-bold font-display text-charcoal mb-3"
-          style={{ letterSpacing: "-0.5px" }}
-        >
+        <h2 className="text-2xl font-bold font-display text-ink mb-3" style={{ letterSpacing: "-0.5px" }}>
           All set!
         </h2>
-        <p className="text-stone max-w-sm mx-auto">
+        <p className="text-muted max-w-sm mx-auto">
           Thanks for filling this out. I&apos;ll review your answers before our call so we can hit the ground running.
         </p>
       </div>
@@ -96,10 +93,10 @@ export default function DiscoveryForm({
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-colors ${
                 s < step
-                  ? "bg-cyan text-charcoal"
+                  ? "bg-brand-blue text-canvas"
                   : s === step
-                  ? "bg-cyan text-charcoal ring-4 ring-cyan-ice"
-                  : "bg-lavender text-stone"
+                  ? "bg-brand-blue text-canvas ring-4 ring-brand-blue-light"
+                  : "bg-canvas-2 text-muted"
               }`}
             >
               {s < step ? (
@@ -110,7 +107,7 @@ export default function DiscoveryForm({
                 s
               )}
             </div>
-            {s < 3 && <div className={`flex-1 h-px ${s < step ? "bg-cyan" : "bg-lavender"}`} />}
+            {s < 3 && <div className={`flex-1 h-px ${s < step ? "bg-brand-blue" : "bg-line"}`} />}
           </div>
         ))}
       </div>
@@ -118,13 +115,10 @@ export default function DiscoveryForm({
       {/* Step 1 — Project type */}
       {step === 1 && (
         <div>
-          <h1
-            className="text-2xl font-bold font-display text-charcoal mb-2"
-            style={{ letterSpacing: "-1.5px" }}
-          >
+          <h1 className="text-2xl font-bold font-display text-ink mb-2" style={{ letterSpacing: "-1.5px" }}>
             What do you need help with?
           </h1>
-          <p className="text-stone mb-6">Pick the option that best describes your project.</p>
+          <p className="text-muted mb-6">Pick the option that best describes your project.</p>
           <div className="grid grid-cols-1 gap-3">
             {PROJECT_TYPES.map((pt) => (
               <button
@@ -136,12 +130,12 @@ export default function DiscoveryForm({
                 }}
                 className={`flex items-center gap-4 px-5 py-4 rounded-xl border text-left transition-all ${
                   form.project_type === pt.value
-                    ? "border-cyan bg-cyan-ice ring-1 ring-cyan-deep"
-                    : "border-lavender hover:border-cyan-sky hover:bg-off-white"
+                    ? "border-brand-blue bg-brand-blue-light ring-1 ring-brand-blue-deep"
+                    : "border-line hover:border-brand-blue hover:bg-canvas-2"
                 }`}
               >
                 <span className="text-2xl">{pt.icon}</span>
-                <span className="font-medium text-charcoal">{pt.label}</span>
+                <span className="font-medium text-ink">{pt.label}</span>
               </button>
             ))}
           </div>
@@ -151,16 +145,13 @@ export default function DiscoveryForm({
       {/* Step 2 — Budget & Timeline */}
       {step === 2 && (
         <div>
-          <h1
-            className="text-2xl font-bold font-display text-charcoal mb-2"
-            style={{ letterSpacing: "-1.5px" }}
-          >
+          <h1 className="text-2xl font-bold font-display text-ink mb-2" style={{ letterSpacing: "-1.5px" }}>
             Scope &amp; timeline
           </h1>
-          <p className="text-stone mb-6">These help me come to our call with relevant options.</p>
+          <p className="text-muted mb-6">These help me come to our call with relevant options.</p>
 
           <div className="mb-6">
-            <p className="text-sm font-semibold text-charcoal mb-3">Rough budget</p>
+            <p className="text-sm font-semibold text-ink mb-3">Rough budget</p>
             <div className="flex flex-wrap gap-2">
               {BUDGETS.map((b) => (
                 <button
@@ -169,8 +160,8 @@ export default function DiscoveryForm({
                   onClick={() => setField("budget", b)}
                   className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
                     form.budget === b
-                      ? "border-cyan bg-cyan-ice text-cyan-deep ring-1 ring-cyan"
-                      : "border-lavender text-stone hover:border-cyan-sky"
+                      ? "border-brand-blue bg-brand-blue-light text-brand-blue-deep ring-1 ring-brand-blue"
+                      : "border-line text-muted hover:border-brand-blue"
                   }`}
                 >
                   {b}
@@ -180,7 +171,7 @@ export default function DiscoveryForm({
           </div>
 
           <div className="mb-8">
-            <p className="text-sm font-semibold text-charcoal mb-3">Timeline</p>
+            <p className="text-sm font-semibold text-ink mb-3">Timeline</p>
             <div className="flex flex-wrap gap-2">
               {TIMELINES.map((t) => (
                 <button
@@ -189,8 +180,8 @@ export default function DiscoveryForm({
                   onClick={() => setField("timeline", t)}
                   className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
                     form.timeline === t
-                      ? "border-cyan bg-cyan-ice text-cyan-deep ring-1 ring-cyan"
-                      : "border-lavender text-stone hover:border-cyan-sky"
+                      ? "border-brand-blue bg-brand-blue-light text-brand-blue-deep ring-1 ring-brand-blue"
+                      : "border-line text-muted hover:border-brand-blue"
                   }`}
                 >
                   {t}
@@ -203,7 +194,7 @@ export default function DiscoveryForm({
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="px-5 py-2.5 rounded-lg border border-lavender text-stone text-sm font-medium hover:bg-off-white transition-colors"
+              className="px-5 py-2.5 rounded-lg border border-line text-muted text-sm font-medium hover:bg-canvas-2 transition-colors"
             >
               Back
             </button>
@@ -211,7 +202,7 @@ export default function DiscoveryForm({
               type="button"
               onClick={() => setStep(3)}
               disabled={!form.budget || !form.timeline}
-              className="flex-1 px-5 py-2.5 rounded-lg bg-cyan text-charcoal text-sm font-semibold hover:bg-cyan-deep disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 px-5 py-2.5 rounded-lg bg-brand-blue text-canvas text-sm font-semibold hover:bg-brand-blue-deep disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               Next →
             </button>
@@ -222,18 +213,15 @@ export default function DiscoveryForm({
       {/* Step 3 — Details */}
       {step === 3 && (
         <form onSubmit={handleSubmit}>
-          <h1
-            className="text-2xl font-bold font-display text-charcoal mb-2"
-            style={{ letterSpacing: "-1.5px" }}
-          >
+          <h1 className="text-2xl font-bold font-display text-ink mb-2" style={{ letterSpacing: "-1.5px" }}>
             A bit more detail
           </h1>
-          <p className="text-stone mb-6">Last step — tell me about your project and confirm your info.</p>
+          <p className="text-muted mb-6">Last step — tell me about your project and confirm your info.</p>
 
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-charcoal mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -241,11 +229,11 @@ export default function DiscoveryForm({
                   required
                   value={form.name}
                   onChange={(e) => setField("name", e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-lg border border-lavender text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-cyan focus:border-transparent"
+                  className="w-full px-4 py-2.5 rounded-lg border border-line text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-charcoal mb-1.5">
+                <label className="block text-sm font-medium text-ink mb-1.5">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -253,26 +241,26 @@ export default function DiscoveryForm({
                   required
                   value={form.email}
                   onChange={(e) => setField("email", e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-lg border border-lavender text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-cyan focus:border-transparent"
+                  className="w-full px-4 py-2.5 rounded-lg border border-line text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-charcoal mb-1.5">
-                Company <span className="text-stone font-normal">(optional)</span>
+              <label className="block text-sm font-medium text-ink mb-1.5">
+                Company <span className="text-muted font-normal">(optional)</span>
               </label>
               <input
                 type="text"
                 value={form.company}
                 onChange={(e) => setField("company", e.target.value)}
                 placeholder="Acme Inc."
-                className="w-full px-4 py-2.5 rounded-lg border border-lavender text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-cyan focus:border-transparent"
+                className="w-full px-4 py-2.5 rounded-lg border border-line text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-charcoal mb-1.5">
+              <label className="block text-sm font-medium text-ink mb-1.5">
                 Tell me about your project <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -281,7 +269,7 @@ export default function DiscoveryForm({
                 value={form.message}
                 onChange={(e) => setField("message", e.target.value)}
                 placeholder="What are you trying to build or solve? What does success look like?"
-                className="w-full px-4 py-2.5 rounded-lg border border-lavender text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-cyan focus:border-transparent resize-none"
+                className="w-full px-4 py-2.5 rounded-lg border border-line text-ink text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent resize-none"
               />
             </div>
 
@@ -295,18 +283,18 @@ export default function DiscoveryForm({
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="px-5 py-2.5 rounded-lg border border-lavender text-stone text-sm font-medium hover:bg-off-white transition-colors"
+                className="px-5 py-2.5 rounded-lg border border-line text-muted text-sm font-medium hover:bg-canvas-2 transition-colors"
               >
                 Back
               </button>
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-cyan text-charcoal text-sm font-semibold hover:bg-cyan-deep disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-blue text-canvas text-sm font-semibold hover:bg-brand-blue-deep disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {status === "loading" ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-charcoal" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-canvas" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                     </svg>

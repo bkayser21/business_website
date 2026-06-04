@@ -1,47 +1,50 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/config";
+import RevealProvider from "@/components/RevealProvider";
+import { BRAND_NAME } from "@/lib/config";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-space-grotesk",
   display: "swap",
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-manrope",
   display: "swap",
-  weight: ["400", "500", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: `${BRAND_NAME} — Custom Software for Small Businesses`,
-  description: `${BRAND_TAGLINE}. Custom web development, SaaS products, AI automation, and technical consulting for small businesses.`,
+  title: `${BRAND_NAME} — Win back hours with simple AI & custom software`,
+  description:
+    "Apex Made helps local small businesses save time with simple AI tools, automations, and custom software. Book a free discovery call.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      data-accent="bold"
+      data-motion="lively"
+      data-headline="hours"
+      className={`${spaceGrotesk.variable} ${manrope.variable} h-full`}
+    >
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <RevealProvider />
+        <noscript>
+          <style>{`.reveal { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
       </body>
     </html>
   );

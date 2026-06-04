@@ -1,17 +1,21 @@
 import Hero from "@/components/sections/Hero";
+import Problem from "@/components/sections/Problem";
 import Services from "@/components/sections/Services";
-import About from "@/components/sections/About";
-import Process from "@/components/sections/Process";
-import Contact from "@/components/sections/Contact";
+import HowItWorks from "@/components/sections/Process";
+import WhyApexMade from "@/components/sections/About";
+import FAQ from "@/components/sections/FAQ";
+import CTABand from "@/components/sections/Contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Problem />
       <Services />
-      <About />
-      <Process />
-      <Contact />
+      <HowItWorks />
+      <WhyApexMade />
+      <FAQ />
+      <CTABand />
     </>
   );
 }
